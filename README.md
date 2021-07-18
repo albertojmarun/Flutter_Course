@@ -9,7 +9,9 @@ And to start with this Learning path, I'm following the Course made by Pau Ferna
 ## Course Information:
 
 Flutter Course: Flutter
+
 Author of the Course: Pau Fernandez.
+
 Language: Spanish.
 
 [Link of the Course.](https://youtube.com/playlist?list=PL-DwF6obA18K9Vb7TP0dd-ISTET9JkMnF)
@@ -34,3 +36,20 @@ It shows how to use the functions, what you can do, how, the parameters (really 
 
 ### Flutter 3:
 Here, the main purpose is to explain the Control Structures, and explains the if, else if, else; switch;  tables; for loop, for loop for lists, while loop.
+
+### Flutter 4:
+The files of DART_CLASES.dart and PERSONA.dart are the Example of the videos.
+
+The most important things to highlight is that you can have more than one class inside a file.
+
+You can have the more than one constructor, adding: NameOfTheClass.whatever(parameters...)
+There is the method 'toString()' that you can override to make your own method.
+
+You can make a variable, method, constant... private adding a '_' before, example: _variable
+
+To make a getter or a setter you can do =>
+type get/set name(parameter)
+
+To import a file that you create, you'll only need: import 'file.dart';
+
+Then, the video 4B (As the author named) there is an example of how to import objects from JSON. The example is the folder 'SPACEX_JSON'
