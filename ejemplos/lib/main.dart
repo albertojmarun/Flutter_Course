@@ -1,16 +1,26 @@
 // IMPORTS GO AT THE BEGINNING.
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Directionality(
-    textDirection: TextDirection.ltr,
-    child: Center(
-      child: Text(
-        'Hello Motherfucker',
-        style: TextStyle(
-          fontSize: 30
+class myApp extends StatelessWidget {
+  const myApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Ejemplos Flutter',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Ejemplos Flutter')),
+        body: Center(
+          child: Text(
+            'Hello Flutter App in a Function',
+          ),
         ),
       ),
-    ),
-  ));
+    );
+  }
+}
+
+void main() {
+  runApp(myApp());
 }
