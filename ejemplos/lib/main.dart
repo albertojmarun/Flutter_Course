@@ -1,54 +1,42 @@
 // IMPORTS GO AT THE BEGINNING.
 import 'package:flutter/material.dart';
 
+// Flutter - Text
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ejemplos Flutter',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ejemplos Flutter'),
-        ),
-        body: Center(
-          child: Container(
-            // width: 200,
-            // height: 200,
-            // You cannot combine a color and a decoration.
-            // color: Colors.red,
-            // decoration: FlutterLogoDecoration(),
-            decoration: BoxDecoration(
-              color: Colors.pink[50],
-              border: Border.all(
-                color: Colors.red,
-                width: 6,
-                style: BorderStyle.solid,
-              ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
+      home: Center(
+        child: SizedBox(
+          width: 350,
+          height: 150,
+          child: Text(
+            'Un texto ' * 10,
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.ltr,
+            textScaleFactor: 1.2,
+            maxLines: 3,
+            overflow: TextOverflow.visible,
+            style: TextStyle(
+              color: Colors.yellow,
+              fontSize: 25,
+              fontWeight: FontWeight.w900,
+              fontStyle: FontStyle.italic,
+              decoration: TextDecoration.overline,
+              decorationColor: Colors.red,
+              decorationThickness: 1.4,
+              decorationStyle: TextDecorationStyle.wavy,
+              backgroundColor: Colors.purple,
+              shadows: [
+                Shadow(
+                  color: Colors.blue,
                   offset: Offset(4, 4),
-                  blurRadius: 5,
+                  blurRadius: 4,
                 ),
               ],
-            ),
-            margin: EdgeInsets.all(10),
-            child: Text(
-              'Hola Bebe' + ', Como andas?',
-              style: TextStyle(fontSize: 30),
-            ),
-            padding: EdgeInsets.all(20),
-            // padding: EdgeInsets.only(left: 20),
-            constraints: BoxConstraints(
-              maxWidth: 300,
-              maxHeight: 400,
-              minWidth: 100,
-              minHeight: 150,
+              letterSpacing: 5,
+              wordSpacing: 50,
+              height: 1.5,
             ),
           ),
         ),
