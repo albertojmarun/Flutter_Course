@@ -1,43 +1,43 @@
 // IMPORTS GO AT THE BEGINNING.
 import 'package:flutter/material.dart';
 
-// Flutter - Column
+// Flutter - Row
 class MyApp extends StatelessWidget {
+  final TextStyle myStyle = TextStyle(
+    fontSize: 40,
+  );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(
-        color: Color.fromARGB(255, 230, 240, 255),
-        child: Center(
-          child: Column(
+      home: Scaffold(
+        body: Center(
+          child: Row(
             children: <Widget>[
-              Text('Primera'),
-              Container(
-                height: 50,
-                width: 50,
-                color: Colors.green,
+              Text(
+                'uno',
+                style: myStyle,
               ),
               Text(
-                'Segunda',
-                style: TextStyle(fontSize: 20),
-                // textAlign: TextAlign.center,
+                'dos',
+                style: myStyle.copyWith(
+                  color: Colors.purple,
+                  fontSize: 35,
+                ),
               ),
-              Container(
-                height: 150,
-                width: 120,
-                color: Colors.blue,
+              Text(
+                'tres',
+                style: myStyle.copyWith(
+                  fontSize: 80,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                ),
               ),
             ],
-            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-            /// CROSS AXIS ALIGNMENT PRECEDE TEXT ALIGN ON TEXT.
-            crossAxisAlignment: CrossAxisAlignment.center,
-
-            /// VERTICAL DIRECTION
-            /// VerticalDirection.up -> starts at the end, and finish at the beginning.
-            /// VerticalDirection.down -> default.
-            verticalDirection: VerticalDirection.down,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
           ),
         ),
       ),
