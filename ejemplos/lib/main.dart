@@ -1,47 +1,19 @@
 // IMPORTS GO AT THE BEGINNING.
 import 'package:flutter/material.dart';
 
-// Flutter - Row
-class MyApp extends StatelessWidget {
-  final TextStyle myStyle = TextStyle(
-    fontSize: 40,
-  );
+/// UPLOAD IMAGES
+/// To Upload Images you can use:
+///  Image.network (Taking an URL) or Image.asset(Taking an Image that you upload on your Project).
+///
+/// When you are going to work with files or something, it is important to create a folder name assets and there you will upload the files.
+///
+/// And in the pubspec.yaml you need to uncomment the assets and add your own assets.
 
+// Flutter - Icon
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Row(
-            children: <Widget>[
-              Text(
-                'uno',
-                style: myStyle,
-              ),
-              Text(
-                'dos',
-                style: myStyle.copyWith(
-                  color: Colors.purple,
-                  fontSize: 35,
-                ),
-              ),
-              Text(
-                'tres',
-                style: myStyle.copyWith(
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red,
-                ),
-              ),
-            ],
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-          ),
-        ),
-      ),
-    );
+    return MaterialApp();
   }
 }
 
