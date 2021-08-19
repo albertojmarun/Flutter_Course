@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             textScaleFactor: 1.2,
             maxLines: 3,
             overflow: TextOverflow.visible,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.yellow,
               fontSize: 25,
               fontWeight: FontWeight.w900,
@@ -55,5 +55,5 @@ class MyApp extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MuestrarioApp());
+  runApp(const MuestrarioApp());
 }
 
 class MuestrarioApp extends StatelessWidget {
@@ -13,7 +13,7 @@ class MuestrarioApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Muestrario de Botones'),
+          title: const Text('Muestrario de Botones'),
         ),
         // The GridView.count is useful to make a table with defined columns
         body: GridView.count(
@@ -21,120 +21,115 @@ class MuestrarioApp extends StatelessWidget {
           crossAxisCount: 2, // Number of columns.
           children: <Widget>[
             ButtonShow(
+              text: 'Elevated Button',
               child: ElevatedButton(
-                child: Text(
-                  'Press Me!',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 onPressed: () {
+                  // ignore: avoid_print
                   print('Has apretado');
                 },
+                child: const Text(
+                  'Press Me!',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
-              text: 'Elevated Button',
             ),
-            ButtonShow(
+            const ButtonShow(
               text: 'Elevated Button Unabled',
               child: ElevatedButton(
+                // If you put an empty function will enabled the button, but if you put null, is not enabled.
+                onPressed: null,
                 child: Text(
                   'Press Me!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // If you put an empty function will enabled the button, but if you put null, is not enabled.
-                onPressed: null,
               ),
             ),
             ButtonShow(
               text: 'Text Button',
               // We use TextButton instead of FlatButton, because the last one is depreceated.
               child: TextButton(
-                child: Text(
+                onPressed: () {
+                  // ignore: avoid_print
+                  print('TextButton pressed');
+                },
+                child: const Text(
                   'Press Me!',
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                onPressed: () {
-                  print('TextButton pressed');
-                },
               ),
             ),
-            ButtonShow(
+            const ButtonShow(
               text: 'Text Button Unabled',
               // We use TextButton instead of FlatButton, because the last one is depreceated.
               child: TextButton(
+                onPressed: null,
                 child: Text(
                   'Press Me!',
                 ),
-                onPressed: null,
               ),
             ),
-            ButtonShow(
+            const ButtonShow(
               text: 'Outlined Button',
               // On the Tutorial, they use the OutlineButton but it is depreceated.
               child: OutlinedButton(
+                onPressed: null, // () {},
                 child: Text('Press Me!'),
-                onPressed: () {
-                  print('OutlinedButton pressed');
-                },
               ),
             ),
             ButtonShow(
               text: 'Outlined Button Unabled with StadiumBorder',
               // On the Tutorial, they use the OutlineButton but it is depreceated.
               child: OutlinedButton(
-                child: Text('Press Me!'),
                 onPressed: null,
                 style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  ),
+                  shape: MaterialStateProperty.all(const StadiumBorder()),
                 ),
+                child: const Text('Press Me!'),
               ),
             ),
             ButtonShow(
-              text:'OutlinedButton with an Icon and other important properties.',
+              text:
+                  'OutlinedButton with an Icon and other important properties.',
               // On the Tutorial, they use the OutlineButton but it is depreceated.
               child: OutlinedButton.icon(
                 onPressed: () {},
-                icon: Icon(Icons.add),
-                label: Text('Add Circle'),
+                icon: const Icon(Icons.add),
+                label: const Text('Add Circle'),
                 style: ButtonStyle(
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  ),
+                  shape: MaterialStateProperty.all(const StadiumBorder()),
                   foregroundColor: MaterialStateProperty.all(Colors.red),
                   // Highlight color -> OverlayColor
                   overlayColor: MaterialStateProperty.all(Colors.green[200]),
                 ),
               ),
             ),
-            ButtonShow(
+            const ButtonShow(
               text: 'IconButton',
               child: IconButton(
                 icon: Icon(Icons.account_balance_sharp),
-                onPressed: () {},
+                onPressed: null, // () {},
                 tooltip: 'IconButton Hint',
               ),
             ),
-            ButtonShow(
-              child: CloseButton(),
+            const ButtonShow(
               text: 'Close Button',
+              child: CloseButton(),
             ),
-            ButtonShow(
-              child: BackButton(),
+            const ButtonShow(
               text: 'Back Button',
+              child: BackButton(),
             ),
             ButtonShow(
               text: 'Hello',
               child: FloatingActionButton(
                 onPressed: () {},
                 backgroundColor: Colors.green[900],
-                child: Icon(Icons.add_task),
+                child: const Icon(Icons.add_task),
               ),
             ),
           ],
@@ -167,12 +162,10 @@ class ButtonShow extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              this.child,
-              SizedBox(
-                height: 10,
-              ),
+              child,
+              const SizedBox(height: 10),
               Text(
-                this.text,
+                text,
                 textAlign: TextAlign.center,
               ),
             ],

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: const <Widget>[
               MyPill('First'),
               MyPill('Second', color: Colors.blue),
               MyPill('Third', color: Colors.green),
@@ -42,18 +42,16 @@ class MyPill extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 15),
-      padding: EdgeInsets.symmetric(
+      margin: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 10,
       ),
       width: 200,
       decoration: BoxDecoration(
-        color: this.color,
-        borderRadius: BorderRadius.all(
-          Radius.circular(100),
-        ),
-        boxShadow: [
+        color: color,
+        borderRadius: const BorderRadius.all(Radius.circular(100)),
+        boxShadow: const [
           BoxShadow(
             color: Colors.black54,
             offset: Offset(5, 5),
@@ -62,9 +60,9 @@ class MyPill extends StatelessWidget {
         ],
       ),
       child: Text(
-        this.texto,
+        texto,
         textAlign: TextAlign.center,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
           fontSize: 22,
         ),

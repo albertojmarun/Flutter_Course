@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Ejemplos Flutter'),
+          title: const Text('Ejemplos Flutter'),
         ),
         body: Center(
           child: Container(
@@ -25,31 +25,31 @@ class MyApp extends StatelessWidget {
               border: Border.all(
                 color: Colors.red,
                 width: 6,
-                style: BorderStyle.solid,
+                // style: BorderStyle.solid, // DEFAULT VALUE
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(15),
                 topRight: Radius.circular(15),
               ),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
-                  color: Colors.black,
+                  // color: Colors.black, // DEFAULT VALUE
                   offset: Offset(4, 4),
                   blurRadius: 5,
                 ),
               ],
             ),
-            margin: EdgeInsets.all(10),
-            child: Text(
-              'Hola Bebe' + ', Como estas?',
-              style: TextStyle(fontSize: 30),
-            ),
-            padding: EdgeInsets.all(20),
-            constraints: BoxConstraints(
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(20),
+            constraints: const BoxConstraints(
               maxHeight: 400,
               minHeight: 150,
               maxWidth: 300,
               minWidth: 100,
+            ),
+            child: const Text(
+              'Hola Bebe' + ', Como estas?',
+              style: TextStyle(fontSize: 30),
             ),
           ),
         ),
@@ -59,5 +59,5 @@ class MyApp extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }

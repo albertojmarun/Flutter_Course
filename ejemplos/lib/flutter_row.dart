@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Flutter - Row
 class MyApp extends StatelessWidget {
-  final TextStyle myStyle = TextStyle(
+  final TextStyle myStyle = const TextStyle(
     fontSize: 40,
   );
 
@@ -14,6 +14,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
             children: <Widget>[
               Text(
                 'uno',
@@ -35,10 +38,6 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ],
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
           ),
         ),
       ),

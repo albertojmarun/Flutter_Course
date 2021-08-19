@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    Directionality(
+    const Directionality(
       textDirection: TextDirection.ltr,
       child: Center(
         child: Text(

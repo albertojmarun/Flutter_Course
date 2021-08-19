@@ -11,7 +11,7 @@ class MovieInfo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Movie: ',
             style: TextStyle(
               fontSize: 24,
@@ -40,20 +40,20 @@ class MovieTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(
+    const textStyle = TextStyle(
       color: Colors.grey,
       fontSize: 14,
     );
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
+            padding: const EdgeInsets.only(bottom: 8.0),
             child: Text(
-              this.movie.title,
-              style: TextStyle(
+              movie.title,
+              style: const TextStyle(
                 color: Colors.yellow,
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
@@ -63,23 +63,23 @@ class MovieTop extends StatelessWidget {
           Row(
             children: <Widget>[
               Text(
-                this.movie.year.toString(),
+                movie.year.toString(),
                 style: textStyle,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
-                this.movie.ageRating,
+                movie.ageRating,
                 style: textStyle,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(
-                '${this.movie.minutes} min.',
+                '${movie.minutes} min.',
                 style: textStyle,
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  this.movie.genres.join(', '),
+                  movie.genres.join(', '),
                   style: textStyle,
                   textAlign: TextAlign.right,
                   overflow: TextOverflow.ellipsis,
@@ -100,14 +100,14 @@ class MovieMiddle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderSide = BorderSide(
+    const borderSide = BorderSide(
       color: Colors.grey,
-      width: 1,
+      // width: 1, //DEFAULT VALUE
     );
 
     return Container(
       height: 300,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         border: Border(
           bottom: borderSide,
           top: borderSide,
@@ -116,16 +116,13 @@ class MovieMiddle extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.asset(this.movie.posterAsset),
+          Image.asset(movie.posterAsset),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Text(
-                this.movie.description,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                ),
+                movie.description,
+                style: const TextStyle(color: Colors.white, fontSize: 14),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 20,
               ),
@@ -142,7 +139,7 @@ class MovieBottom extends StatelessWidget {
 
   TableRow movieInformation(String label, List<String> people,
       {String separator = ' '}) {
-    final textStyle = TextStyle(
+    const textStyle = TextStyle(
       color: Colors.white,
       fontSize: 16,
       height: 1.2,
@@ -167,20 +164,18 @@ class MovieBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Table(
-          columnWidths: {
-            0: FlexColumnWidth(1),
-            1: FlexColumnWidth(3),
-          },
-          children: [
-            movieInformation('Directors:', this.movie.directors),
-            movieInformation('Writers:', this.movie.writers),
-            movieInformation('Actors:', this.movie.actors, separator: '\n'),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Table(
+        columnWidths: const {
+          0: FlexColumnWidth(),
+          1: FlexColumnWidth(3),
+        },
+        children: [
+          movieInformation('Directors:', movie.directors),
+          movieInformation('Writers:', movie.writers),
+          movieInformation('Actors:', movie.actors, separator: '\n'),
+        ],
       ),
     );
   }

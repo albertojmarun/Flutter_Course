@@ -1,4 +1,3 @@
-// Imports go at the Beginning
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,9 +11,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Ejemplos Flutter'),
+          title: const Text('Ejemplos Flutter'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello Flutter App in a Function'),
         ),
       ),
@@ -23,5 +22,5 @@ class MyApp extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }

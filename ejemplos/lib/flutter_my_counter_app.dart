@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // Flutter - MyCounterApp
 
 void main() {
-  runApp(CounterApp());
+  runApp(const CounterApp());
 }
 
 /// This class is about the CounterApp that Flutter generates when a new Project is created.
@@ -17,7 +17,7 @@ class CounterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: CounterPage(),
+      home: const CounterPage(),
     );
   }
 }
@@ -36,13 +36,13 @@ class _CounterPageState extends State<CounterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyCounterApp'),
+        title: const Text('MyCounterApp'),
       ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(
+            const Text(
               'You Pressed the Button:',
               style: TextStyle(fontSize: 18),
             ),
@@ -54,14 +54,12 @@ class _CounterPageState extends State<CounterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(
-          Icons.add,
-        ),
         onPressed: () {
           setState(() {
             _counter++;
           });
         },
+        child: const Icon(Icons.add),
       ),
     );
   }

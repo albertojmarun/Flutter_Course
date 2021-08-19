@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Expanded(
-              flex: 1,
               child: Container(
                 color: Colors.red,
                 height: 100,
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: Container(
                 color: Colors.blue,
                 height: 200,

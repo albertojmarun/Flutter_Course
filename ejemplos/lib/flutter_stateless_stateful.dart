@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Body(),
@@ -19,9 +19,9 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          // Is default mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             SinEstado(),
@@ -40,8 +40,8 @@ class SinEstado extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      padding: EdgeInsets.all(20),
-      child: Center(
+      padding: const EdgeInsets.all(20),
+      child: const Center(
         child: Text('Without State!'),
       ),
     );
@@ -75,9 +75,9 @@ class Estado extends State<ConEstado> {
         });
       },
       child: Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         height: 200,
-        color: (_activo ? Colors.blue : Colors.grey),
+        color: _activo ? Colors.blue : Colors.grey,
         child: Center(
           child: Text('Estado: $_activo!'),
         ),

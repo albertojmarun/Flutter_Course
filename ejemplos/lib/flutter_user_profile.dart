@@ -9,14 +9,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: false,
-          title: Text(
-            "User Profile",
-          ),
-          backgroundColor: Color.fromARGB(40, 0, 255, 0),
+          title: const Text("User Profile"),
+          backgroundColor: const Color.fromARGB(40, 0, 255, 0),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: const <Widget>[
             Header(
               username: 'albertojmarun',
               height: 180,
@@ -48,9 +46,9 @@ class Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Text(
-        this.text,
+        text,
         textAlign: TextAlign.justify,
       ),
     );
@@ -58,7 +56,8 @@ class Description extends StatelessWidget {
 }
 
 class Connections extends StatelessWidget {
-  final int followingNumber, followersNumber;
+  final int followingNumber;
+  final int followersNumber;
 
   const Connections({
     Key? key,
@@ -69,8 +68,8 @@ class Connections extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(40, 0, 255, 0),
-      padding: EdgeInsets.symmetric(vertical: 10),
+      color: const Color.fromARGB(40, 0, 255, 0),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -100,18 +99,18 @@ class Connection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final barStyle = TextStyle(color: Color.fromARGB(160, 0, 0, 0));
+    const barStyle = TextStyle(color: Color.fromARGB(160, 0, 0, 0));
 
     return Column(
       children: <Widget>[
         Text(
-          this.connectionStatus.toUpperCase(),
+          connectionStatus.toUpperCase(),
           style: barStyle.copyWith(
             fontSize: 16,
           ),
         ),
         Text(
-          '${this.number}',
+          number.toString(),
           style: barStyle.copyWith(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -139,11 +138,11 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: this.height,
-      padding: EdgeInsets.only(bottom: 15),
+      height: height,
+      padding: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(this.backgroundPhoto),
+          image: AssetImage(backgroundPhoto),
           fit: BoxFit.cover,
         ),
       ),
@@ -151,12 +150,12 @@ class Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           UserPhoto(
-            userPhotoUrl: this.userPhoto,
-            size: 100,
+            userPhotoUrl: userPhoto,
+            // size: 100, // DEFAULT VALUE
           ),
           Text(
-            '@${this.username}',
-            style: TextStyle(
+            username,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -181,11 +180,11 @@ class UserPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: this.size,
-      width: this.size,
+      height: size,
+      width: size,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(this.userPhotoUrl),
+          image: AssetImage(userPhotoUrl),
           fit: BoxFit.cover,
         ),
         shape: BoxShape.circle,

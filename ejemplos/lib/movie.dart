@@ -1,6 +1,9 @@
 class Movie {
+  // ignore: avoid_multiple_declarations_per_line
   String title, description, posterAsset, ageRating;
+  // ignore: avoid_multiple_declarations_per_line
   int year, minutes;
+  // ignore: avoid_multiple_declarations_per_line
   List<String> genres, directors, writers, actors;
 
   Movie({
